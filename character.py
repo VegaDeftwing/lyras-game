@@ -66,7 +66,7 @@ class user:
         self.politicalLA = 0.0
         self.dead = False
         self.lawObeying = 50 + random.randint(-25, 25)
-        self.HeartRate = 60
+        self.heartRate = 60
         # Game starts at current date
         self.Year = datetime.date.today()
         self.gender = gender
