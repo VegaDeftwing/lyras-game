@@ -12,6 +12,8 @@ def makereal():
     clear()
     lastName = input("What is your REAL last name?\n")
     clear()
+    age = input("In real life how old are you?\n [any value under 16 will be changed to 16]\n")
+    clear()
     height = input("What is your REAL height?\n")
     clear()
     weight = input("What is your REAL weight?\n")
@@ -33,9 +35,10 @@ def makereal():
 
     real = character.real(firstName, lastName, height, weight,
                           sexualOrientation, occupation, virginity,
-                          politicalLR, politicalLA, lawObeying, gender)
+                          politicalLR, politicalLA, lawObeying, gender,age)
 
     print("Name: " + real.name + "\n")
+    print("Age: " + str(real.age) + "\n")
     print("Height: " + str(real.height) + " inches\n")
     print("Weight: " + str(real.weight) + " lbs.\n")
     print("Gender: " + real.gender + "\n")

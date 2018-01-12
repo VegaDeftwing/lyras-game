@@ -6,8 +6,9 @@ random.seed()
 class real:
     def __init__(self, firstName, lastName, height, weight,
                  sexualOrientation, occupation, virginity,
-                 politicalLR, politicalLA, lawObeying, gender):
+                 politicalLR, politicalLA, lawObeying, gender, age):
         self.firstName = firstName
+        self.age = age
         self.lastName = lastName
         self.name = firstName + " " + lastName
         self.height = int(height)
