@@ -35,6 +35,10 @@ class user:
         self.height = int(height) + random.randint(-10, 10)
         self.weight = int(weight) + random.randint(-20, 20)
         self.species = species
+        self.race
+        self.impatient = 50 + random.randint(-10, 10)
+        self.lazy = 50 + random.randint(-10, 10)
+        self.honesty = 50 + random.randint(-10, 10)
         self.location = "room1"
         self.health = 50 + random.randint(-10, 10)
         self.stregnth = 50 + random.randint(-10, 10)
