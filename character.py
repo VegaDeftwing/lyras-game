@@ -9,7 +9,7 @@ class real:
                  politicalLR, politicalLA, lawObeying, gender):
         self.firstName = firstName
         self.lastName = lastName
-        self.name = firstName + lastName
+        self.name = firstName + " " + lastName
         self.height = int(height)
         self.weight = int(weight)
         self.sexualOrientation = sexualOrientation
@@ -28,11 +28,12 @@ class user:
                  sexualOrientation, politicalLR, politicalLA, gender):
         self.firstName = firstName
         self.lastName = lastName
-        self.name = firstName + lastName
+        self.name = firstName + " " + lastName
         # truncate name if name to 3 chars is greater than 7 chars
         if len(firstName) >= 7:
             self.nick = firstName[0] + firstName[1] + firstName[2]
         self.height = int(height) + random.randint(-10, 10)
+        self.weight = int(weight) + random.randint(-20, 20)
         self.species = species
         self.location = "room1"
         self.health = 50 + random.randint(-10, 10)
