@@ -58,4 +58,3 @@ class npc:
         self.description
         self.encounterChance
         self.title
-        self.
