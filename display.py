@@ -26,6 +26,8 @@
 
 from kivy.app import App
 from kivy.uix.widget import Widget
+from kivy.uix.button import Button
+from kivy.uix.gridlayout import GridLayout
 from kivy.properties import NumericProperty, ReferenceListProperty,\
     ObjectProperty
 from kivy.vector import Vector
@@ -36,10 +38,20 @@ class LyraGame(Widget):
         #print(dt)
     pass
 
+class LyraLayout(GridLayout):
+    def __init__(self, **kwargs):
+        super(LyraLayout, self).__init__(**kwargs)
+        btn = Button(text = "test")
+        btn.bind(on_press=self.clk)
+        self.add_widget(btn)
+    def clk(self, obj):
+        print("Button Pressed")
+
+
 
 class LyraApp(App):
     def build(self):
-        display = LyraGame()
+        display = LyraLayout()
         # Clock.schedule_interval(display.update, 1.0 / 60.0)
         return display
 
