@@ -42,6 +42,7 @@ class LyraLayout(GridLayout):
     def __init__(self, **kwargs):
         super(LyraLayout, self).__init__(**kwargs)
         btn = Button(text = "test")
+        btn.background_normal = "/home/vega/Documents/GitHub/local/lyras-game/documents/button_normal.png"
         btn.bind(on_press=self.clk)
         self.add_widget(btn)
     def clk(self, obj):
