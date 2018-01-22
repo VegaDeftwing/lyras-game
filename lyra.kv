@@ -1,6 +1,6 @@
 #:kivy 1.0.9
 
-<LyraLayout>:
+<BtnLayout>:
     # background:
     #     Color:
     #         rgba: .207, .0039, .1333, 1
@@ -10,23 +10,23 @@
     cols: 4
     rows: 4
     canvas:
-        # Color:
-        #     rgba: .207, .0039, .1333, 1
-        # Rectangle:
-        #     pos: self.pos
-        #     size: self.size
+        Color:
+            rgba: .207, .0039, .1333, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
         Rectangle:
             pos: 0, self.center_y / 2.5
             size: self.width, 5
         Rectangle:
             pos: self.center_x / 2.5, 0
             size: 5, self.height
-    Button:
-        id: label1
-        text: 'B1'
-    Button:
-        id: label1
-        text: 'B2'
+    # Button:
+    #     id: label1
+    #     text: 'B1'
+    # Button:
+    #     id: label1
+    #     text: 'B2'
     # Label:
     #     font_size: 70
     #     center_x: root.width / 4
