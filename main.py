@@ -31,4 +31,4 @@ else:
     real = save_data[1]
 
 print(save_data)
-display.display_stats(user)
+display()
