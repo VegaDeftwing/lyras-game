@@ -1,12 +1,29 @@
 #:kivy 1.0.9
+<FinalLayout>
+    canvas:
+        Color:
+            rgba: .207, .0039, .1333, 1
+        Rectangle:
+            pos: self.pos
+            size: self.width, self.height
+
+<ScrolllabelLabel>
+    canvas:
+        Color:
+            rgba: .207, .0039, .1333, 1
+        Rectangle:
+            pos: self.pos
+            size: self.width, self.height
+    Label:
+        text: root.text
+        font_size: 20
+        text_size: self.width, None
+        size_hint_y: None
+        padding_x: 30
+        padding_y: 40
+        height: self.texture_size[1]
 
 <BtnLayout>:
-    # background:
-    #     Color:
-    #         rgba: .207, .0039, .1333, 1
-    #     Rectangle:
-    #         pos: self.pos
-    #         size: self.size
     cols: 4
     rows: 4
     canvas:
@@ -15,12 +32,7 @@
         Rectangle:
             pos: self.pos
             size: self.size
-        Rectangle:
-            pos: 0, self.center_y / 2.5
-            size: self.width, 5
-        Rectangle:
-            pos: self.center_x / 2.5, 0
-            size: 5, self.height
+
     # Button:
     #     id: label1
     #     text: 'B1'
