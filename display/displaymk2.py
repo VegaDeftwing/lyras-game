@@ -18,21 +18,24 @@ class BtnLayout(GridLayout):
     def __init__(self, **kwargs):
         super(BtnLayout, self).__init__(**kwargs)
         btnlst = buttons.makebtns(15)
-        btnlst[1].bind(on_press=self.clk)
         btnlst[1].text = "test"
         for x in range(0, 15):
+            btnstring = "test " + str(x)
+            btnlst[x].text = btnstring
+            btnlst[x].bind(on_press=self.clk)
             self.add_widget(btnlst[x])
 
     def clk(self, obj):
-        print("Button Pressed")
+        print(str(obj.text) + ": Button Pressed")
+        FinalLayout.update(self,1)
 
 class FinalLayout(Widget):
-    display_text = StringProperty("hem")
+    text = StringProperty("testtest")
     def __init__(self, **kwargs):
         super(FinalLayout, self).__init__(**kwargs)
-        self.display_text = "testtest testtest testtest"
+        self.text = "If you are seeing this something has gone very, very wrong. May the debugging gods take pitty on you."
     def update(self, dt):
-        self.display_text = "fucking please"
+        self.text = "Please fucking work"
 
 class Lyra2App(App):
     def build(self):
