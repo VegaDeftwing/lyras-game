@@ -1,4 +1,6 @@
 #:kivy 1.0.9
+
+#Set The background color
 <FinalLayout>
     canvas:
         Color:
@@ -6,56 +8,150 @@
         Rectangle:
             pos: self.pos
             size: self.width, self.height
+    GridLayout:
+        size: root.size
+        rows: 2
+        cols: 2
+        GridLayout:
+            id: StatsAndMap
+            cols: 1
+            rows: 2
+            GridLayout:
+                id: Stats
+                cols: 2
+                rows: 1
+                GridLayout:
+                    id: encounterpicture
+                    cols: 1
+                    rows: 1
+                    Label:
+                        text: "pic"
+                GridLayout:
+                    id: encounter
+                    cols: 8
+                    rows: 2
+                    Label:
+                        text: "Stat1"
+                    Label:
+                        text: "Stat2"
+                    Label:
+                        text: "Stat3"
+                    Label:
+                        text: "Stat4"
+                    Label:
+                        text: "Stat5"
+                    Label:
+                        text: "Stat6"
+                    Label:
+                        text: "Stat7"
+                    Label:
+                        text: "Stat8"
+                    Label:
+                        text: "Stat1"
+                    Label:
+                        text: "Stat2"
+                    Label:
+                        text: "Stat3"
+                    Label:
+                        text: "Stat4"
+                    Label:
+                        text: "Stat5"
+                    Label:
+                        text: "Stat6"
+                    Label:
+                        text: "Stat7"
+                    Label:
+                        text: "Stat8"
 
-<Map>
-    canvas:
-        Color:
-            rgba: 1, 1, 1, 1
-        Rectangle:
-            pos: (0,self.height/2)
-            size: self.width / 16, self.height / 128
-
-<ScrolllabelLabel>
-    canvas:
-        Color:
-            rgba: .207, .0039, .1333, 1
-        Rectangle:
-            pos: self.pos
-            size: self.width, self.height
-    Label:
-        id: meh
-        text: root.text
-        font_size: 20
-        text_size: self.width, None
-        size_hint_y: None
-        padding_x: 30
-        padding_y: 40
-        height: self.texture_size[1]
-
-<BtnLayout>:
-    cols: 4
-    rows: 4
-    canvas:
-        Color:
-            rgba: .207, .0039, .1333, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
-
-    # Button:
-    #     id: label1
-    #     text: 'B1'
-    # Button:
-    #     id: label1
-    #     text: 'B2'
-    # Label:
-    #     font_size: 70
-    #     center_x: root.width / 4
-    #     top: root.top - 50
-    #     text: "0"
-    #
-    # Label:
-    #     font_size: 70
-    #     center_x: root.width * 3 / 4
-    #     top: root.top - 50
-    #     text: "0"
+            GridLayout:
+                id: Mapa
+                cols: 1
+                rows: 2
+                GridLayout:
+                    id: MapID
+                    cols: 2
+                    rows: 1
+                    Label:
+                        text: "Location"
+                    Label:
+                        text: "Time"
+                Map:
+        ScrollView:
+            id: main
+            size_hint: (2.2, 3)
+            Label:
+                id: meh
+                text: root.text
+                font_size: 20
+                text_size: self.width, None
+                size_hint_y: None
+                padding_x: 30
+                padding_y: 40
+                height: self.texture_size[1]
+        GridLayout:
+            id: char
+            cols: 2
+            rows: 1
+            padding: (5, 7)
+            GridLayout:
+                cols: 2
+                rows: 2
+                Label:
+                    text: "Char Picture"
+                Label:
+                    text: "Char Zone"
+                GridLayout:
+                    id: menu
+                    cols: 2
+                    rows: 2
+                    Label:
+                        text: "profile"
+                    Label:
+                        text: "save"
+                    Label:
+                        text: "other"
+                    Label:
+                        text: "other"
+                Label:
+                    text: "Char Real"
+            GridLayout:
+                id: charstats
+                cols: 8
+                rows: 2
+                Label:
+                    text: "Stat1"
+                Label:
+                    text: "Stat2"
+                Label:
+                    text: "Stat3"
+                Label:
+                    text: "Stat4"
+                Label:
+                    text: "Stat5"
+                Label:
+                    text: "Stat6"
+                Label:
+                    text: "Stat7"
+                Label:
+                    text: "Stat8"
+                Label:
+                    text: "Stat1"
+                Label:
+                    text: "Stat2"
+                Label:
+                    text: "Stat3"
+                Label:
+                    text: "Stat4"
+                Label:
+                    text: "Stat5"
+                Label:
+                    text: "Stat6"
+                Label:
+                    text: "Stat7"
+                Label:
+                    text: "Stat8"
+        BtnLayout:
+            spacing: 13
+            cols: 5
+            rows: 4
+            height: 270
