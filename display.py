@@ -14,7 +14,7 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 import buttons
 import newgame
-from load import loadgamedisplay
+from dispatcher import dispatcher, recievelayout
 import time
 import os
 import pickle
@@ -53,14 +53,15 @@ class BtnLayout(GridLayout):
 
     def clk(self, obj):
         print(str(obj.text) + ": Button Pressed")
-        buttons.dispatcher(obj, state)
+        global state
+        state = dispatcher(obj, state)
 
 
     def update(self):
         for x in self.children:
-            if x.text == "blank":
+            if x.text == "blank" or x.text == "":
                 buttons.setbgrs_blank(x)
-            elif x.text == "inactive":
+            elif x.text == "inactive" or x.text == " ":
                 buttons.setbgrs_inactive(x)
             else:
                 buttons.setbgrs_active(x)
@@ -76,18 +77,18 @@ class FinalLayout(Widget):
 
 
     def update(self, dt):
-        state = 0
-        self.text = "Please fucking work"
-        if state == 0:
-            loadgamedisplay(self)
-            state = 1
+        global state
+        obj = "invalid"
+        state = dispatcher(obj, state)
         BtnLayout.update(self.children[0].children[0])
 
 
 class LyraApp(App):
     def build(self):
         display = FinalLayout()
+        recievelayout(display)
         Clock.schedule_interval(display.update, 1.0 / 60.0)
         return display
+
 
 LyraApp().run()
