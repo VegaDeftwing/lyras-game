@@ -1,4 +1,5 @@
 from kivy.uix.button import Button
+from load import loadgameinput
 
 def setbgrs_active(btn):
     btn.background_normal = "/home/vega/Documents/GitHub/local/lyras-game/documents/button_w_shortcut.png"
@@ -19,3 +20,8 @@ def makebtns(num):
     for x in range(0,num):
         btnlst.append(Button(text="You shouldn't see this", size_hint_x=None, size=(240, 75), size_hint=(None, None)))
     return btnlst
+
+def dispatcher(obj, state):
+    print(str(state))
+    if state == 0:
+        loadgameinput(str(obj.text))

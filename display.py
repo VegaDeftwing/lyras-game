@@ -14,11 +14,14 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 import buttons
 import newgame
-import load
+from load import loadgamedisplay
 import time
-import display
 import os
 import pickle
+
+
+state = 0
+
 
 def makemap(num):
     imglst = []
@@ -43,20 +46,17 @@ class BtnLayout(GridLayout):
     def __init__(self, **kwargs):
         super(BtnLayout, self).__init__(**kwargs)
         btnlst = buttons.makebtns(15)
-        # This is a sanity check:
-        btnlst[0].text = "Button 0"
-        btnlst[1].text = "Button 1"
         for x in range(0, 15):
             btnlst[x].bind(on_press=self.clk)
             self.add_widget(btnlst[x])
 
+
     def clk(self, obj):
         print(str(obj.text) + ": Button Pressed")
+        buttons.dispatcher(obj, state)
+
 
     def update(self):
-        # for x in self.children:
-        #     # This line sets the text of each button
-        #     x.text = "inactive"
         for x in self.children:
             if x.text == "blank":
                 buttons.setbgrs_blank(x)
@@ -68,21 +68,26 @@ class BtnLayout(GridLayout):
 
 class FinalLayout(Widget):
     text = StringProperty("testtest")
+
+
     def __init__(self, **kwargs):
         super(FinalLayout, self).__init__(**kwargs)
         self.text = "If you are seeing this something has gone very, very wrong. May the debugging gods take pitty on you."
+
+
     def update(self, dt):
+        state = 0
         self.text = "Please fucking work"
+        if state == 0:
+            loadgamedisplay(self)
+            state = 1
         BtnLayout.update(self.children[0].children[0])
+
 
 class LyraApp(App):
     def build(self):
         display = FinalLayout()
         Clock.schedule_interval(display.update, 1.0 / 60.0)
         return display
-
-# LOADING AND SAVING
-
-
 
 LyraApp().run()

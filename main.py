@@ -1,5 +1,3 @@
-import newgame
-import load
 import time
 import display
 import os
