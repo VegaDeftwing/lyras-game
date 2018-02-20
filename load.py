@@ -56,7 +56,7 @@ def loadgamedisplay(Layout,btnpress):
     print(save)
     layout.text = "meh"
     if os.stat(save).st_size == 0:
-        #real = newgame.makereal()
+        #real = newgame.makereal(layout)
         #user = newgame.makeuser(real)
         #print(real)
         print("---\n")
@@ -67,7 +67,7 @@ def loadgamedisplay(Layout,btnpress):
     #     save_data = pickle.load(input)
     #     user = save_data[0]
     #     real = save_data[1]
-    print("testing")
+    #print("testing")
 
 
 # save = loadgame()

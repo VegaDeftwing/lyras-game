@@ -4,4 +4,4 @@ import os
 import pickle
 
 meh = display()
-print(meh)
+print("Something went wrong!")

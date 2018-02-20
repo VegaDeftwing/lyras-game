@@ -14,7 +14,7 @@ from kivy.clock import Clock
 from kivy.lang import Builder
 import buttons
 import newgame
-from dispatcher import dispatcher, recievelayout
+from dispatcher import dispatcher, recievelayout, recievebtnlayout
 import time
 import os
 import pickle
@@ -87,6 +87,7 @@ class LyraApp(App):
     def build(self):
         display = FinalLayout()
         recievelayout(display)
+        recievebtnlayout(display.children[0].children[0])
         Clock.schedule_interval(display.update, 1.0 / 60.0)
         return display
 

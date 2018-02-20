@@ -21,5 +21,7 @@ def setbgrs_blank(btn):
 def makebtns(num):
     btnlst = []
     for x in range(0,num):
-        btnlst.append(Button(text="", size_hint_x=None, size=(240, 75), size_hint=(None, None)))
+        idb = "btn" + str(x)
+        print(idb)
+        btnlst.append(Button(id=idb ,text="", size_hint_x=None, size=(240, 75), size_hint=(None, None)))
     return btnlst

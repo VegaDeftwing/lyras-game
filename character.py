@@ -70,3 +70,5 @@ class user:
         # Game starts at current date
         self.Year = datetime.date.today()
         self.gender = gender
+        self.coin = 0.0
+        self.age = 0
